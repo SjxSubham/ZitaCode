@@ -134,7 +134,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get) => {
                 const output = data.run.output;
 
                 set({
-                    output: output.trim,
+                    output: output.trim(),
                     error: null,
                     executionResult: {
                         code,

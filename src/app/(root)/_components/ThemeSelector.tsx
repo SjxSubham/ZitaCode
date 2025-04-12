@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { THEMES } from "../_constants";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { AnimatePresence, motion } from "framer-motion";
-import { CircleOff, Cloud, Github, Laptop, Moon, Palette, Sun } from "lucide-react";
+import { CircleOff, Cloud, CloudMoonRain, Github, Laptop, Moon, Palette, SprayCan, Sun } from "lucide-react";
 import useMounted from "@/hooks/useMounted";
 
 
@@ -14,6 +14,8 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
   "github-dark": <Github className="size-4" />,
   monokai: <Laptop className="size-4" />,
   "solarized-dark": <Cloud className="size-4" />,
+  "night-owl": <CloudMoonRain  className="size-4" />,
+  "nord": <SprayCan className="size-4" />, 
 };
 
 

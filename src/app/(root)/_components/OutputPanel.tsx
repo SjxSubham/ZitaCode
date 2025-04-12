@@ -41,7 +41,7 @@ function OutputPanel() {
             </>
           ) : (
             <>
-              <Copy className="w-3.5 h-3.5" />
+              <Copy color="#50eaed" className="w-3.5 h-3.5" />
               Copy
             </>
           )}
@@ -52,7 +52,7 @@ function OutputPanel() {
     {/* Output Area */}
     <div className="relative">
       <div
-        className="relative bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
+        className="relative bg-[#f5f5f5]/90 dark:bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
       rounded-xl p-4 h-[600px] overflow-auto font-mono text-sm"
       >
         {isRunning ? (
@@ -67,11 +67,11 @@ function OutputPanel() {
           </div>
         ) : output ? (
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-emerald-400 mb-3">
+            <div className="flex items-center gap-2 text-green-600 dark:text-emerald-400 mb-3">
               <CheckCircle className="w-5 h-5" />
               <span className="font-medium">Execution Successful...</span>
             </div>
-            <pre className="whitespace-pre-wrap text-gray-300">{output}</pre>
+            <pre className="whitespace-pre-wrap text-[#1e1e2e]/100 dark:text-gray-300">{output}</pre>
           </div>
         ) : (
           <div className="h-full flex flex-col items-center justify-center text-gray-500">
