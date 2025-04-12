@@ -8,6 +8,7 @@ import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import RunButton from './RunButton';
 import HeaderProfileBtn from './HeaderProfileBtn';
+import ThemeToggleButton from '@/components/ThemeToggleButton'
 
 async function Header() {
 
@@ -23,7 +24,7 @@ async function Header() {
     <div className="relative z-10">
     <div
       className="flex items-center lg:justify-between justify-center 
-      bg-[#0a0a0f]/80 backdrop-blur-xl p-6 mb-4 rounded-lg"
+       backdrop-blur-xl p-6 mb-4 rounded-lg"
     >
       <div className="flex items-start px-2 gap-32">
   <Link href="/" className="flex items-center gap-3 group relative">
@@ -55,7 +56,7 @@ async function Header() {
   <nav className="flex items-center space-x-1">
     <Link
       href="/snippets"
-      className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
+      className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gray-800/50 
         hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
     >
       <div
@@ -64,7 +65,7 @@ async function Header() {
       />
       <Code2 className="w-4 h-4 relative z-10 group-hover:rotate-3 transition-transform" />
       <span
-        className="text-sm font-medium relative z-10 group-hover:text-white
+        className="text-sm font-medium relative z-10 group-hover:shadow-indigo-400
          transition-colors "
       >
         Snippets
@@ -72,7 +73,7 @@ async function Header() {
     </Link>
   </nav>
       </div>
-
+      
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3">
           <ThemeSelector />
@@ -95,6 +96,9 @@ async function Header() {
 
         <SignedIn>
           <RunButton />
+          <div className='flex'>
+        <ThemeToggleButton /> 
+      </div>
         </SignedIn>
 
         <div className="pl-3 border-l border-gray-800">
