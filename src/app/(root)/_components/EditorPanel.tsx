@@ -206,7 +206,7 @@ function EditorPanel() {
 
   return (
     <div className="relative">
-      <div className="relative bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
+      <div className="relative bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -214,14 +214,14 @@ function EditorPanel() {
               <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
             </div>
             <div>
-              <h2 className="text-sm font-medium font-mono text-white">Code Editor</h2>
+              <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Code Editor</h2>
               <p className="text-xs text-gray-500">Write and execute your code</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             {/* Font Size Slider */}
             <div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
-              <TypeIcon className="size-4 text-gray-400" />
+              <TypeIcon className="size-4  text-gray-300 dark:text-gray-400" />
               <div className="flex items-center gap-3">
                 <input
                   type="range"
@@ -241,10 +241,10 @@ function EditorPanel() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleRefresh}
-              className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors"
+              className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 dark:ring-white/5 ring-white transition-colors"
               aria-label="Reset to default code"
             >
-              <RotateCcwIcon className="size-4 text-gray-400" />
+              <RotateCcwIcon className="size-4 text-gray-300 dark:text-gray-400" />
             </motion.button>
 
             {/* AI Review Button */}
