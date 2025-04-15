@@ -206,7 +206,7 @@ function EditorPanel() {
 
   return (
     <div className="relative">
-      <div className="relative bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
+      <div className="relative shadow-2xl bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">

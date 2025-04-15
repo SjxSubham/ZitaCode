@@ -18,7 +18,7 @@ function OutputPanel() {
         setTimeout(() => setIsCopied(false), 2000);
     }
   return (
-    <div className="relative bg-gray-400/50 dark:bg-[#181825] rounded-xl p-7 ring-1 ring-gray-100 dark:ring-gray-800/50">
+    <div className="relative shadow-2xl bg-gray-400/50 dark:bg-[#181825] rounded-xl p-7 ring-1 ring-gray-100 dark:ring-gray-800/50">
     {/* Header */}
     <div className="flex items-center justify-between mb-3">
       <div className="flex items-center gap-2">
