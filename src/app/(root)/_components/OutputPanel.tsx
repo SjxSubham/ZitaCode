@@ -18,14 +18,14 @@ function OutputPanel() {
         setTimeout(() => setIsCopied(false), 2000);
     }
   return (
-    <div className="relative bg-[#181825] rounded-xl p-4 ring-1 ring-gray-800/50">
+    <div className="relative bg-gray-400/50 dark:bg-[#181825] rounded-xl p-7 ring-1 ring-gray-100 dark:ring-gray-800/50">
     {/* Header */}
     <div className="flex items-center justify-between mb-3">
       <div className="flex items-center gap-2">
         <div className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#1e1e2e] ring-1 ring-gray-800/50">
           <Terminal className="w-4 h-4 text-blue-400" />
         </div>
-        <span className="text-sm font-medium text-gray-300">Output</span>
+        <span className="text-sm font-semibold dark:font-medium p-2 dark:text-gray-300">Output</span>
       </div>
 
       {hasContent && (
@@ -76,7 +76,7 @@ function OutputPanel() {
         ) : (
           <div className="h-full flex flex-col items-center justify-center text-gray-500">
             <div className="flex items-center  justify-center w-12 h-12 rounded-xl bg-gray-800/50 ring-1 ring-gray-700/50 mb-4">
-              <Clock className="w-6 h-6 " />
+              <Clock className="w-6 h-6 text-gray-600" />
             </div>
             <p className="text-center animate-bounce">Run your code to see the output here...</p>
           </div>
