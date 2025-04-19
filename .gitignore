@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# hidden files
+backup.ts
+gemini backup.tsx
+
 # next.js
 /.next/
 /out/

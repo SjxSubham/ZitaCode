@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body.light {
-  background-color: #ffffff;
+  background-color: #ededed;
   color: #000000;
 }
 

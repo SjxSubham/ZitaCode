@@ -19,7 +19,6 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
   const [isLoading, setIsLoading] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
-
   const handleReview = async () => {
     setIsLoading(true);
     try {
@@ -44,6 +43,8 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
     }
   };
 
+ 
+  
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="min-w-fit max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg custom-scrollbar">
