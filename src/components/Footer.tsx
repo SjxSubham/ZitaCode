@@ -11,7 +11,7 @@ function Footer() {
             <Blocks className="size-5" />
             <span>Built for Programmers, by @Sjx</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <div className="flex border-md rounded-md py-1 px-2 bg-gray-300 dark:bg-indigo-500 dark:bg-opacity-30">          
             <Link href="/support" className="font-serif text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors">
               Quiz (Beta v1.2)
@@ -20,12 +20,14 @@ function Footer() {
             <Link href="/privacy" className="text-gray-400 hover:text-gray-300 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-gray-300 transition-colors">
-              Terms
+            <div className="flex border-md rounded-md py-1 px-2 bg-gray-300 dark:bg-indigo-500 dark:bg-opacity-30">
+            <Link href="https://feed-x-widget.vercel.app/?projectId=11" className="font-serif text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors">
+              Feedback
             </Link>
+            </div>
+          </div>
           </div>
         </div>
-      </div>
     </footer>
   );
 }
