@@ -62,7 +62,7 @@ function OutputPanel() {
             <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-1" />
             <div className="space-y-1">
               <div className="font-medium animate-pulse">Execution Error</div>
-              <pre className="whitespace-pre-wrap text-red-400/80">{error}</pre>
+              <pre className="whitespace-pre-wrap text-red-400/50 dark:text-red-400/80">{error}</pre>
             </div>
           </div>
         ) : output ? (
