@@ -266,7 +266,7 @@ function EditorPanel() {
               onClick={() => setShareDialogOpen(true)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-indigo-600 via-blue-500 to-indigo-400 opacity-90 hover:opacity-100 transition-opacity"
-              disabled={true} // Disable the button
+             disabled={true} // Disable the button
             >
               <ShareIcon className="size-4 text-white" />
               <span className="text-sm font-medium text-white">Share</span>
