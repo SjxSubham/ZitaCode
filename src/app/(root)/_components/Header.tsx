@@ -100,11 +100,11 @@ async function Header() {
             </span>
           </Link>
         )}
-        
+        <ThemeToggleButton /> 
         <SignedIn>
           <RunButton />
           <div className='flex'>
-        <ThemeToggleButton /> 
+        
       </div>
         </SignedIn>
 
