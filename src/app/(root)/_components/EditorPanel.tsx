@@ -310,7 +310,7 @@ function EditorPanel() {
           {!clerk.loaded && <EditorPanelSkeleton />}
         </div>
       </div>
-      {isShareDialogOpen && <ShareSnippetDialog onClose={() => setShareDialogOpen(false)} />}
+      {/* {isShareDialogOpen && <ShareSnippetDialog onClose={() => setShareDialogOpen(false)} />} */}
       {isReviewDialogOpen && (
         <AICodeReviewDialog
           isOpen={isReviewDialogOpen}
