@@ -29,7 +29,7 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
         },
         body: JSON.stringify({ code, language }),
       });
-
+  
       if (!response.ok) {
         throw new Error("Failed to get AI review");
       }
@@ -57,9 +57,9 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
         <div className="space-y-6 p-6">
           {suggestions.length === 0 && !isLoading && (
             <div className="text-center py-8">
-              <p className="text-gray-500 dark:text-gray-400 mb-4">
-                Get AI-powered suggestions for your code
-              </p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
+                  Get AI-powered suggestions for your code
+                </p>
               <Button
                 onClick={handleReview}
                 className="gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow-md transition-all"
@@ -144,15 +144,15 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
                   {suggestions.join("\n\n")}
                 </ReactMarkdown>
               </div>
-              <Button
-                onClick={handleReview}
-                variant="outline"
-                className="w-full gap-2 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg transition-all"
-              >
-                <Sparkles className="h-4 w-4" />
-                Review Again
-              </Button>
-            </div>
+                <Button
+                  onClick={handleReview}
+                  variant="outline"
+                  className="w-full gap-2 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg transition-all"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  Review Again
+                </Button>
+              </div>
             
           )}
         </div>
