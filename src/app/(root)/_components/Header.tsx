@@ -101,11 +101,9 @@ async function Header() {
           </Link>
         )}
         <ThemeToggleButton /> 
-        <SignedIn>
+        <SignedIn >
           <RunButton />
-          <div className='flex'>
         
-      </div>
         </SignedIn>
 
         <div className="pl-3 border-l border-gray-800">
