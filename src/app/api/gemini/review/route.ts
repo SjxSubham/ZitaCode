@@ -22,7 +22,7 @@ export async function POST(req: Request) {
                   3. Performance optimizations
                   4. Security considerations
                   5. Readability and maintainability
-
+                 
 Code:
 \`\`\`${language}
 ${code}
@@ -31,7 +31,7 @@ ${code}
 Please provide your suggestions in a clear, concise format.`;
 
     const result = await model.generateContent(prompt);
-    const response = await result.response;
+    const response = result.response;
     const text = response.text();
 
     // Split the response into individual suggestions
