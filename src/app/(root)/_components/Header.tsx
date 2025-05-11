@@ -41,7 +41,7 @@ async function Header() {
     >
       <div className="size-8 text-blue-400 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500" >
       <img
-    src="/Image....svg"
+    src="/Image...webp"
     alt="ZitaCode"
     className='rounded-md'
     
