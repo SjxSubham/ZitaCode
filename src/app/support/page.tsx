@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ThemeToggleButton from '@/components/ThemeToggleButton'
-import { Codepen } from 'lucide-react'
 
 function Page() {
   return (
@@ -21,8 +20,15 @@ function Page() {
       className="relative bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] p-2 rounded-xl ring-1
       ring-white/10 group-hover:ring-white/20 transition-all"
     >
-      <Codepen className="size-6 text-blue-400 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500" />
-    </div>
+      <div className="size-8 text-blue-400 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500" >
+      <img
+    src="/Image...webp"
+    alt="ZitaCode"
+    className='rounded-md'
+    
+  />
+        </div>
+          </div>
 
     <div className="flex flex-col">
       <span className="block text-xl font-semibold bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 text-transparent bg-clip-text">

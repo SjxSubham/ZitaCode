@@ -215,7 +215,9 @@ function EditorPanel() {
             </div>
             <div>
               <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Editor</h2>
-              <p className="text-xs text-gray-500">Write execute your code</p>
+              <p className="text-xs text-gray-500">Write, debug, and execute your code seamlessly</p>
+
+
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -230,7 +232,7 @@ function EditorPanel() {
                   value={fontSize}
                   onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
                   className="w-20 h-1 bg-gray-600 rounded-lg cursor-pointer"
-                />
+                /> 
                 <span className="text-sm font-medium text-white dark:text-gray-400 min-w-[2rem] text-center">
                   {fontSize}
                 </span>
