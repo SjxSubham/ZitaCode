@@ -210,7 +210,7 @@ function EditorPanel() {
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#1e1e2e] ring-1 ring-white/5">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg dark:bg-[#1e1e2e] bg-transparent ring-1 ring-white/5">
               <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
             </div>
             <div>
