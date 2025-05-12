@@ -214,7 +214,7 @@ function EditorPanel() {
               <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
             </div>
             <div>
-              <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Editor</h2>
+              <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Code</h2>
               <p className="text-xs text-gray-500">Write, debug, and execute your code seamlessly</p>
 
 
