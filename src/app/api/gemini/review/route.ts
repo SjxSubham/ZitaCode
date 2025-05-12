@@ -28,7 +28,7 @@ Code:
 ${code}
 \`\`\`
 
-Please provide your suggestions in a clear, concise format.`;
+Please provide your suggestions in a clear, concise format, provide the answers less descriptive except the code.`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
