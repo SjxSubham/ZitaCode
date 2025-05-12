@@ -43,7 +43,7 @@ async function Header() {
       <img
     src="/Image...webp"
     alt="ZitaCode"
-    className='rounded-md'
+    className='rounded-md animate-pulse'
     
   />
         </div>
