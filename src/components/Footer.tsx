@@ -21,7 +21,7 @@ function Footer() {
               Privacy
             </Link>
             <div className="flex border-md rounded-md py-1 px-2 bg-gray-300 dark:bg-indigo-500 dark:bg-opacity-30">
-            <Link href="https://feed-x-widget.vercel.app/?projectId=11" className="font-serif text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors">
+            <Link href="https://feed-x-widget.vercel.app/?projectId=11&projectName=ZitaCode" className="font-serif text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors">
               Feedback
             </Link>
             </div>
