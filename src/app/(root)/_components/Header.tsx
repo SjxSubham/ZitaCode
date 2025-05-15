@@ -36,14 +36,14 @@ async function Header() {
 
     
     <div
-      className="relative bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] p-2 rounded-xl ring-1
+      className="relative dark:bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] p-2 rounded-xl ring-1
       ring-white/10 group-hover:ring-white/20 transition-all"
     >
-      <div className="size-8 text-blue-400 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500" >
+      <div className="size-8 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0 transition-transform duration-500" >
       <img
     src="/Image...webp"
     alt="ZitaCode"
-    className='rounded-md animate-pulse'
+    className='rounded-md animate-pulse '
     
   />
         </div>

@@ -49,17 +49,17 @@ function ThemeSelector() {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-48 group relative flex justify-between items-center gap-2 px-2 py-2.5 bg-gray-300 dark:bg-[#1e1e2e]/80 hover:bg-[#262637] 
-        rounded-lg transition-all duration-200 border dark:border-gray-800/50 hover:border-gray-700"
+        className="w-48 group relative flex justify-between items-center gap-2 px-2 py-2.5 bg-gray-300 dark:bg-[#1e1e2e]/80 dark:hover:bg-[#262637] 
+        rounded-lg transition-all shadow-lg duration-200 border dark:border-gray-800/50 hover:border-gray-700"
       >
         {/* hover state bg decorator */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        <Palette className="w-4 h-4 text-gray-700 dark:text-gray-400 group-hover:text-gray-300 transition-colors" />
+        <Palette className="w-4 h-4 text-gray-700 dark:text-gray-400 group-hover:text-gray-700 transition-colors" />
 
 
 
-        <span className="text-left font-medium text-gray-800 dark:text-gray-300 group-hover:text-white transition-colors">
+        <span className="text-left font-medium text-gray-800 dark:text-gray-300 group-hover:text-gray-800 transition-colors">
           {currentTheme?.label}
         </span>
 
