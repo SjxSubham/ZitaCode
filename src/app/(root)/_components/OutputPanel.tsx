@@ -22,8 +22,8 @@ function OutputPanel() {
     {/* Header */}
     <div className="flex items-center justify-between mb-3">
       <div className="flex items-center gap-2">
-        <div className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#1e1e2e] ring-1 ring-gray-800/50">
-          <Terminal className="w-4 h-4 text-blue-400" />
+        <div className="flex items-center justify-center w-6 h-6 rounded-lg dark:bg-[#1e1e2e] ring-1 ring-transparent dark:ring-gray-800/50">
+          <Terminal className="dark:w-4 dark:h-4 w-6 h-5 text-blue-600 dark:text-blue-400" />
         </div>
         <span className="text-sm font-semibold dark:font-medium dark:text-gray-300">Output</span>
       </div>
@@ -41,7 +41,7 @@ function OutputPanel() {
             </>
           ) : (
             <>
-              <Copy color="#50eaed" className="w-3.5 h-3.5" />
+              <Copy color="#50eaed" className="font-bold w-3.5 h-3.5" />
               Copy
             </>
           )}
@@ -52,8 +52,8 @@ function OutputPanel() {
     {/* Output Area */}
     <div className="relative">
       <div
-        className="relative bg-[#f5f5f5]/90 dark:bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
-      rounded-xl p-4 h-[600px] overflow-auto font-mono text-sm"
+        className="relative  bg-[#f5f5f5]/90 dark:bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
+      rounded-lg p-4 h-[600px] overflow-auto font-mono text-sm"
       >
         {isRunning ? (
           <RunningCodeSkeleton />

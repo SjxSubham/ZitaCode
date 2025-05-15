@@ -222,7 +222,7 @@ function EditorPanel() {
           </div>
           <div className="flex items-center gap-3">
             {/* Font Size Slider */}
-            <div className="flex items-center gap-3 px-3 py-2 bg-[#5252dd] dark:bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
+            <div className="flex items-center gap-3 px-2 py-1 bg-[#5252dd] dark:bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
               <TypeIcon className="size-4 text-gray-100 dark:text-gray-400" />
               <div className="flex items-center gap-3">
                 <input
@@ -231,7 +231,7 @@ function EditorPanel() {
                   max="24"
                   value={fontSize}
                   onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
-                  className="w-20 h-1 bg-gray-600 rounded-lg cursor-pointer"
+                  className="w-16 h-1 bg-gray-600 rounded-lg cursor-pointer"
                 /> 
                 <span className="text-sm font-medium text-white dark:text-gray-400 min-w-[2rem] text-center">
                   {fontSize}
@@ -243,7 +243,7 @@ function EditorPanel() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleRefresh}
-              className="p-2 bg-[#5b5bb5] dark:bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 dark:ring-white/5 ring-white transition-colors"
+              className="p-1 bg-[#5b5bb5] dark:bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 dark:ring-white/5 ring-white transition-colors"
               aria-label="Reset to default code"
             >
               <RotateCcwIcon className="size-4 text-gray-300 dark:text-gray-400" />
@@ -254,7 +254,7 @@ function EditorPanel() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setReviewDialogOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
+              className="inline-flex items-center gap-2 px-4 py-2 w-fit rounded-lg overflow-hidden bg-gradient-to-r
                from-purple-600 via-pink-500 to-purple-400 opacity-90 hover:opacity-100 transition-opacity"
             >
               <WandSparkles className="size-4 text-white" />
