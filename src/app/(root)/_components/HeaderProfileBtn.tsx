@@ -5,16 +5,17 @@ import { User } from "lucide-react";
 function HeaderProfileBtn() {
   return (
     <>
-    <UserButton>
+    <div className="shadow-xl rounded-full ">
+    <UserButton >
       <UserButton.MenuItems>
         <UserButton.Link
           label="Profile"
-          labelIcon={<User className="size-4" />}
+          labelIcon={<User className="size-5" />}
           href="/profile"
         />
       </UserButton.MenuItems>
-    </UserButton>
-
+    </UserButton >
+    </div>
     <SignedOut>
       <SignInButton />
     </SignedOut>
