@@ -51,12 +51,12 @@ function LanguageSelector({hasAccess} : {hasAccess: boolean}) {
           aria-hidden="true"
         />
 
-        <div className="size-6 rounded-md bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform">
+        <div className="size-6 rounded-md bg-transparent dark:bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform">
           <Image
             src={currentLanguageObj.logoPath}
             alt="programming language logo"
-            width={24}
-            height={24}
+            width={28}
+            height={28}
             className="w-full h-full object-contain relative z-10"
           />
         </div>
