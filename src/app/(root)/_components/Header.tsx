@@ -24,10 +24,10 @@ async function Header() {
     <div className="relative z-10">
     <div
       className="flex items-center lg:justify-between justify-center 
-       backdrop-blur-xl p-6 mb-4 rounded-lg"
+       backdrop-blur-xl p-6 mb-4 rounded-lg" 
     >
       <div className="flex items-start px-2 gap-32">
-  <Link href="/" className="flex items-center gap-3 group relative">
+  <Link href="/" className="flex items-center gap-3  group relative">
     
     <div
       className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 
