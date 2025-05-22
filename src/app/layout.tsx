@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/ThemeContext";
 import { Toaster } from "react-hot-toast";
 
 import { shadesOfPurple } from '@clerk/themes'
+import ServiceWorkerInitializer from "./(root)/_components/ServiceWorkerInitializer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Toaster position="top-center" />
         <ThemeProvider>
         <ConvexClientProvider>
+        <ServiceWorkerInitializer />
        {children}
       
        </ConvexClientProvider>
