@@ -1,6 +1,6 @@
 // public/sw.js
 const CACHE_NAME = 'zitacode-v1';
-const urlsToCache = ['/', '/index.html', '/styles.css', '/main.js'];
+const urlsToCache = ['/', '/index.html', '/styles.css', '/main.js', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
