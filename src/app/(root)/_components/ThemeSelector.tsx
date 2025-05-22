@@ -55,11 +55,11 @@ function ThemeSelector() {
         {/* hover state bg decorator */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        <Palette className="w-4 h-4 text-gray-700 dark:text-gray-400 group-hover:text-gray-700 transition-colors" />
+        <Palette className="w-4 h-4 text-gray-700 dark:text-gray-400 group-hover:text-gray-400 transition-colors" />
 
 
 
-        <span className="text-left font-medium text-gray-800 dark:text-gray-300 group-hover:text-gray-800 transition-colors">
+        <span className="text-left font-medium text-gray-800 dark:text-gray-300 group-hover:text-gray-300 transition-colors">
           {currentTheme?.label}
         </span>
 

@@ -206,24 +206,24 @@ function EditorPanel() {
 
   return (
     <div className="relative">
-      <div className="relative shadow-2xl bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
+      <div className="relative shadow-2xl bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-4 sm:p-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg dark:bg-[#1e1e2e] bg-transparent ring-1 ring-white/5">
               <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
             </div>
             <div>
               <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Code</h2>
-              <p className="text-xs text-gray-500">Write, debug, and execute your code seamlessly</p>
+              <p className="text-xs sm:w-fit text-gray-500">Write, debug, and execute your code seamlessly</p>
 
 
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
             {/* Font Size Slider */}
-            <div className="flex items-center gap-3 px-2 py-1 bg-[#5252dd] dark:bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
-              <TypeIcon className="size-4 text-gray-100 dark:text-gray-400" />
+            <div className="flex items-center gap-2 px-2 py-1 bg-[#5252dd] dark:bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
+              <TypeIcon className="size-3 sm:size-4 text-gray-100 dark:text-gray-400" />
               <div className="flex items-center gap-3">
                 <input
                   type="range"
@@ -231,9 +231,9 @@ function EditorPanel() {
                   max="24"
                   value={fontSize}
                   onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
-                  className="w-16 h-1 bg-gray-600 rounded-lg cursor-pointer"
+                  className="w-12 sm:w-16 h-1 bg-gray-600 rounded-lg cursor-pointer"
                 /> 
-                <span className="text-sm font-medium text-white dark:text-gray-400 min-w-[2rem] text-center">
+                <span className="text-sm sm:text-sm font-medium text-white dark:text-gray-400 min-w-[1.5rem] sm:min-w-[2rem] text-center">
                   {fontSize}
                 </span>
               </div>
@@ -243,10 +243,10 @@ function EditorPanel() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleRefresh}
-              className="p-1 bg-[#5b5bb5] dark:bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 dark:ring-white/5 ring-white transition-colors"
+              className="p-1 sm:p-2 bg-[#5b5bb5] dark:bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 dark:ring-white/5 ring-white transition-colors"
               aria-label="Reset to default code"
             >
-              <RotateCcwIcon className="size-4 text-gray-300 dark:text-gray-400" />
+              <RotateCcwIcon className="size-3 sm:size-4 text-gray-300 dark:text-gray-400" />
             </motion.button>
 
             {/* AI Review Button */}
@@ -254,7 +254,7 @@ function EditorPanel() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setReviewDialogOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 w-fit rounded-lg overflow-hidden bg-gradient-to-r
+              className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 sm:text-sm py-1 sm:py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-purple-600 via-pink-500 to-purple-400 opacity-90 hover:opacity-100 transition-opacity"
             >
               <WandSparkles className="size-4 text-white" />
@@ -266,7 +266,7 @@ function EditorPanel() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setShareDialogOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r
+              className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-indigo-600 via-blue-500 to-indigo-400 opacity-90 hover:opacity-100 transition-opacity"
              disabled={true} // Disable the button
             >
