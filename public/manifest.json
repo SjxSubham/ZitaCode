@@ -2,7 +2,7 @@
     "name": "ZitaCode",
     "short_name": "ZitaCode",
     "description": "Online Code Editor",
-    "start_url": "/",
+    "start_url": "/?source=pwa",
     "display": "standalone",
     "background_color": "#12121a",
     "theme_color": "#1e1e2e",
