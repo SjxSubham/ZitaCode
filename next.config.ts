@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     return config;
   }
 };
-const pwaConfig = {
+const pwaConfig = withPWA({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
   register: true,
@@ -33,9 +33,18 @@ const pwaConfig = {
   // runtimeCaching: [...],
   // dynamicStartUrl: false,
   // buildExcludes: [/middleware-manifest.json$/],
-};
-
-export default withPWA({
-  ...nextConfig,
-  ...pwaConfig,
+  runtimeCaching: [
+    {
+      urlPattern: /^https?.*/,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'offlineCache',
+        expiration: {
+          maxEntries: 200,
+        },
+      },
+    },
+  ],
 });
+
+export default pwaConfig(nextConfig as any);
