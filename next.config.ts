@@ -25,9 +25,10 @@ const pwaConfig = withPWA({
   buildExcludes: [
     /middleware-manifest\.json$/,
     /_middleware\.js$/,
-    /_middleware\.js\.map$/,
-    /middleware-runtime\.js$/,
-    /server\/pages-manifest\.json$/
+    /_buildManifest\.js$/,
+    /_ssgManifest\.js$/,
+    /\/_next\/static\/chunks\/app-build-manifest\.json$/,
+    /\/_next\/static\/chunks\/webpack\.js$/
   ],
   // Optional PWA configurations:
   // runtimeCaching: [...],
