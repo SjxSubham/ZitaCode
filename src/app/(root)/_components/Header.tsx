@@ -9,6 +9,7 @@ import LanguageSelector from './LanguageSelector';
 import RunButton from './RunButton';
 import HeaderProfileBtn from './HeaderProfileBtn';
 import ThemeToggleButton from '@/components/ThemeToggleButton'
+import InstallButton from './InstallButton';
 
 async function Header() {
 
@@ -111,6 +112,7 @@ async function Header() {
         </div>
       </div>
     </div>
+    <InstallButton />
   </div>
   );
 }
