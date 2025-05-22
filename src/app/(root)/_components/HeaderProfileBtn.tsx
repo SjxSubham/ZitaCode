@@ -9,7 +9,8 @@ function HeaderProfileBtn() {
     <UserButton 
       appearance={{
         elements: {
-          avatarBox: "w-9 h-9",     // user Icon width and hight adjustment
+          avatarBox: "w-9 h-9", 
+              // user Icon width and hight adjustment
         },
       }}
     >

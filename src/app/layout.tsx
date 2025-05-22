@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeContext";
 import { Toaster } from "react-hot-toast";
 
-
+import { shadesOfPurple } from '@clerk/themes'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    appearance={{
+      baseTheme:  shadesOfPurple,
+    }}
+      >
     <html lang="en">
       
       <body
