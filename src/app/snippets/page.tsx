@@ -38,7 +38,7 @@ function Page() {
   </div>
 </Link>
     <div className='dark:bg-gray-500 bg-gray-300 rounded-2xl shadow-2xl'>
-     <div className='flex gap-2 font-extrabold text-3xl justify-center text-center p-9 '><Wrench size={36} absoluteStrokeWidth /> This page is under maintainence <Settings className='animate-spin ' size={30} strokeWidth={1.75} absoluteStrokeWidth /></div>
+     <div className='flex flex-row gap-2 md:gap-4 sm:gap-2 font-extrabold text-3xl justify-center text-center p-9 '><Wrench size={36} absoluteStrokeWidth />This page is under maintainence <Settings className='animate-spin ' size={30} strokeWidth={1.75} absoluteStrokeWidth /></div>
     </div>
     </div>
     </div>

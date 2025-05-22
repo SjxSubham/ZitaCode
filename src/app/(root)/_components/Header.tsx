@@ -23,10 +23,10 @@ async function Header() {
   return (
     <div className="relative z-10">
     <div
-      className="flex items-center lg:justify-between justify-center 
-       backdrop-blur-xl p-6 mb-4 rounded-lg" 
+      className="flex lg:justify-between 
+       backdrop-blur-xl flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 p-4 sm:p-6 mb-4 rounded-lg" 
     >
-      <div className="flex items-start px-2 gap-32">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-32 w-full sm:w-auto">
   <Link href="/" className="flex items-center gap-3  group relative">
     
     <div
@@ -60,17 +60,17 @@ async function Header() {
   </Link>
 
   {/* Navigation */}
-  <nav className="flex items-center space-x-1">
+  <nav className="flex items-center space-x-1 w-full sm:w-auto justify-center sm:justify-start">
     <Link
       href="/snippets"
-      className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gray-400/50 
+      className="relative group flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-lg bg-gray-400/50 
         hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
     >
       <div
         className="absolute inset-0 bg-gradient-to-r from-blue-500/10 
-        to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"
+        to-purple-500/10 opacity-0 group-hover:opacity-50 transition-opacity"
       />
-      <Code2 className="w-4 h-4 relative z-10 group-hover:rotate-3 transition-transform" />
+      <Code2 className="w-4 h-4 relative z-10 sm:w-4 sm:h-4 group-hover:rotate-3 transition-transform" />
       <span
         className="text-sm font-medium relative z-10 group-hover:shadow-indigo-400
          transition-colors "
@@ -81,7 +81,7 @@ async function Header() {
   </nav>
       </div>
       
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto justify-center sm:justify-end">
         <div className="flex items-center gap-3">
           <ThemeSelector />
           <LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />

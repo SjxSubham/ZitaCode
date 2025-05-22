@@ -1,7 +1,7 @@
 import { Settings, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
-import { Analytics } from "@vercel/analytics/next"
+
 function Page() {
   return (
     <div className="min-h-screen p-8">
@@ -40,9 +40,7 @@ function Page() {
     <div className='dark:bg-gray-500 bg-gray-300 rounded-2xl shadow-2xl'>
      <div className='flex gap-2 font-extrabold text-3xl justify-center text-center p-9 '><Wrench size={36} absoluteStrokeWidth /> This page is under maintainence <Settings className='animate-spin ' size={30} strokeWidth={1.75} absoluteStrokeWidth /></div>
     
-    <div className='flex'>
-    <Analytics />
-    </div>
+    
     </div>
     </div>
     </div>

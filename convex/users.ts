@@ -18,7 +18,7 @@ export const syncuser = mutation({
                 userId: args.userId,
                 email: args.email,
                 name: args.name,
-                isPro: false,
+                isPro: true,  //remember change it to false, I have made this true for testing purpose for all users.
             });
         }
     },
