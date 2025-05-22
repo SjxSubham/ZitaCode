@@ -6,7 +6,7 @@ import '../app/globals.css';
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('/sw.ts')
         .then((registration) => console.log('SW registered:', registration.scope))
         .catch((err) => console.error('SW registration failed:', err));
     }
