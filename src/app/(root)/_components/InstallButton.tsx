@@ -1,7 +1,7 @@
 // src/components/InstallButton.tsx
 "use client";
 import { motion } from 'framer-motion';
-import { WandSparkles } from 'lucide-react';
+import { Download } from 'lucide-react';
 import usePWAInstall from '../../../hooks/usePWAInstall';
 
 export default function InstallButton() {
@@ -15,7 +15,7 @@ export default function InstallButton() {
       whileHover={{ scale: 1.05 }}
       className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg"
     >
-      <WandSparkles size={16} />
+      <Download  size={16} />
       Install App
     </motion.button>
   );
