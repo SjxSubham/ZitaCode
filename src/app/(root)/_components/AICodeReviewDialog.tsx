@@ -47,7 +47,7 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
   
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="min-w-fit sm:justify-between max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg custom-scrollbar">
+      <DialogContent className="min-w-fit max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg custom-scrollbar">
         <DialogHeader className="bg-gradient-to-r  from-yellow-400 to-yellow-500 m-2 p-4 rounded-t-lg">
           <DialogTitle className="flex items-center gap-2 dark:text-gray-800">
             <BrainCircuit className="h-5 w-5" />
@@ -78,7 +78,7 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
             </div>
           )}
           {suggestions.length > 0 && (
-            <div className="space-y-6">
+            <div className="space-y-6 justify-between">
               <h3 className="font-medium text-lg text-gray-800 dark:text-gray-200">
                 Suggestions:
               </h3>
