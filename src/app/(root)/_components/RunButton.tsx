@@ -1,7 +1,7 @@
 "use client"
 import { useCodeEditorStore } from '@/store/useCodeEditorStore'
 import { useUser } from '@clerk/nextjs'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {motion} from 'framer-motion';
 import { Loader2, Play } from 'lucide-react';
 
@@ -15,6 +15,21 @@ function RunButton() {
       //todo: save the result
     }
   }
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault()
+        if (!isRunning) {
+          handleRun()
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isRunning, handleRun]) // Dependencies ensure latest state
+
   return(
     <motion.button
     onClick={handleRun}
@@ -26,6 +41,7 @@ function RunButton() {
       disabled:cursor-not-allowed
       focus:outline-none shadow-xl
     `}
+    aria-label="Run code (Ctrl+Enter)"
   >
     {/* bg wit gradient */}
     <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-400 rounded-xl opacity-100 transition-opacity group-hover:opacity-90" />
