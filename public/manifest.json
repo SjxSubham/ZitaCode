@@ -4,6 +4,7 @@
     "description": "Online Code Editor",
     "start_url": "/",
     "display": "fullscreen",
+    "display_override": ["window-controls-overlay"],
     "background_color": "#12121a",
     "theme_color": "#1e1e2e",
     "icons": [
