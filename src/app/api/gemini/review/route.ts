@@ -17,11 +17,12 @@ export async function POST(req: Request) {
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const prompt = `Please review the following ${language} code and provide specific suggestions for improvement. Focus on:
-                  1. Code quality and best practices
-                  2. Potential bugs or issues & fix them
-                  3. Performance optimizations
-                  4. Security considerations
-                  5. Readability and maintainability
+                  1. Time Complexity & Space Complexity
+                  2. Code quality and best practices
+                  3. Potential bugs or issues & fix them
+                  4. Performance optimizations
+                  5. Security considerations
+                  6. Readability and maintainability
                  
 Code:
 \`\`\`${language}

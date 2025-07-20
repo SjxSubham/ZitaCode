@@ -43,7 +43,30 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
     }
   };
 
- 
+//  const handleTC = async () => {
+//     setIsLoading(true);
+//     try {
+//       const response = await fetch("/api/gemini/timecomplexity", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ code, language }),
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error("Failed to get AI review");
+//       }
+
+//       const data = await response.json();
+//       setSuggestions(data.suggestions);
+//     } catch (error) {
+//       console.error("Error getting AI review:", error);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   }
+
   
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -67,6 +90,13 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
                 <BrainCircuit className="text-gray-800 h-4 w-4" />
                 Review Code
               </Button>
+              {/* <Button
+                onClick={handleTC}
+                className="gap-4 mx-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow-md transition-all"
+                >
+                <Copy className="text-gray-800 h-4 w-4" />
+                Time COmplexity
+                </Button> */}
 
             </div>
 
