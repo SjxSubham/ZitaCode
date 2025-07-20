@@ -161,7 +161,7 @@ import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
 import { Editor } from "@monaco-editor/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { RotateCcwIcon, ShareIcon, TypeIcon, Sparkles, BrainCircuit, WandSparkles } from "lucide-react";
+import { RotateCcwIcon, ShareIcon, TypeIcon, Sparkles, BrainCircuit, WandSparkles, ALargeSmall } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
 import useMounted from "@/hooks/useMounted";
@@ -224,7 +224,7 @@ function EditorPanel() {
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
             {/* Font Size Slider */}
             <div className="flex items-center gap-2 px-2 py-1 bg-[#5252dd] dark:bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
-              <TypeIcon className="size-3 sm:size-4 text-gray-100 dark:text-gray-400" />
+              <ALargeSmall className="size-5 sm:size-4 text-gray-100 dark:text-gray-400" />
               <div className="flex items-center gap-3">
                 <input
                   type="range"
