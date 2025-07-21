@@ -29,7 +29,7 @@ Code:
 ${code}
 \`\`\`
 
-Please provide your suggestions in a clear, concise format, provide the answers less descriptive except the code.`;
+Please provide your suggestions in a clear, concise format, provide the answers less descriptive except the code. and please give faster response blazzing fast`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
