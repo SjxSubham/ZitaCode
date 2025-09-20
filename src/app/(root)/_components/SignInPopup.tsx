@@ -42,7 +42,7 @@ function SignInPopup() {
         <DialogContent className="sm:max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-gray-700">
           <DialogHeader className="text-center space-y-3">
 {/*             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center"> */}
-              <div className="size-8 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0 transition-transform duration-500" >
+              <div className="size-8 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0 items-center justify-center transition-transform duration-500" >
                   <img
                 src="/Image...webp"
                 alt="ZitaCode"
