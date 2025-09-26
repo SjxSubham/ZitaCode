@@ -39,22 +39,22 @@ function SignInPopup() {
   return (
     <SignedOut>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-gray-700">
+        <DialogContent className="sm:max-w-md dark:bg-gradient-to-br from-gray-900 to-gray-950 border-gray-700">
           <DialogHeader className="text-center space-y-3 items-center justify-center">
 {/*             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center"> */}
               <div className="size-11 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0  transition-transform duration-500" >
                   <img
                 src="/Image...webp"
                 alt="ZitaCode"
-                className='rounded-md animate-pulse '
+                className='rounded-md'
                 
               />
               </div>
 {/*             </div> */}
-            <DialogTitle className="text-2xl font-bold text-white">
+            <DialogTitle className="text-2xl font-bold dark:text-white">
               Welcome to ZitaCode!
             </DialogTitle>
-            <DialogDescription className="text-gray-300 text-base">
+            <DialogDescription className="dark:text-gray-300 text-gray-800 text-base">
               Sign in to unlock the full power of our code editor. Get access to advanced features, save your projects, and join our community of developers.
             </DialogDescription>
           </DialogHeader>
