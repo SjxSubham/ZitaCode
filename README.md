@@ -1,10 +1,10 @@
-# 🚀 ZitaCode - Interactive Online Code Editor
+#  ZitaCode - Online Code Editor 
 
 <div align="center">
 
 ![ZitaCode Logo](https://github.com/user-attachments/assets/422ce720-fb8f-4439-9e24-1a7f5d9d4e64)
 
-**A modern, feature-rich online code editor with real-time execution, AI-powered code review, and seamless collaboration.**
+**A modern, feature-rich online code editor with real-time execution, AI-powered code review, and seamless collaboration along support of more than 10 languages.**
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-ZitaCode-blue?style=for-the-badge)](dub.sh/ZitaCode)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3-black?style=flat&logo=next.js)](https://nextjs.org/)
@@ -13,39 +13,39 @@
 
 </div>
 
-## ✨ Features
+## <<>> Features
 
-### 🖥️ **Multi-Language Code Editor**
+###  **Multi-Language Code Editor**
 - **10+ Programming Languages**: JavaScript, TypeScript, Python, Java, Go, Rust, C++, C#, Ruby, Swift, C
 - **Monaco Editor Integration**: VS Code-like editing experience with syntax highlighting
 - **Real-time Code Execution**: Powered by Piston API for secure server-side execution
 - **Custom Themes**: Light/Dark mode with persistent theme storage
 
-### 🤖 **AI-Powered Code Analysis**
+###  **AI-Powered Code Analysis**
 - **Intelligent Code Review**: Get suggestions for code improvement using Google Gemini AI
 - **Complexity Analysis**: Time and space complexity evaluation
 - **Best Practices**: Code quality and performance recommendations
 - **Interactive Suggestions**: Markdown-formatted responses with syntax highlighting
 
-### 🎨 **Modern User Experience**
+###  **Modern User Experience**
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Progressive Web App (PWA)**: Install as a native app with offline capabilities
 - **Keyboard Shortcuts**: `Ctrl + '` to run code quickly
 - **Real-time Feedback**: Loading states and error handling
 
-### 🔐 **Authentication & Data Management**
+###  **Authentication & Data Management**
 - **Clerk Authentication**: Secure user authentication with multiple providers
 - **Convex Database**: Real-time data synchronization and storage
 - **Code Snippets**: Save and manage your code snippets
 - **Execution History**: Track your coding sessions
 
-### 🛠️ **Developer Features**
+###  **Developer Features**
 - **TypeScript Support**: Full TypeScript integration with type safety
 - **Code Persistence**: Automatic saving to localStorage
 - **Font Size Customization**: Adjustable editor font size (10-24px)
 - **Network Status**: Real-time network connectivity monitoring
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 ### **Frontend**
 - **Framework**: Next.js 15.3 with App Router
@@ -69,7 +69,7 @@
 - **Icons**: Lucide React
 - **Notifications**: React Hot Toast
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18.x or later
@@ -86,7 +86,7 @@
 
 2. **Install dependencies**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    # or
    yarn install
    ```
@@ -124,7 +124,7 @@
 6. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🎯 Usage
+## >> Usage
 
 ### **Basic Code Editing**
 1. Select your preferred programming language from the dropdown
@@ -148,7 +148,7 @@
 - Access saved snippets from the snippets page
 - Organize by programming language
 
-## 📱 PWA Features
+## <> PWA Features
 
 ZitaCode works as a Progressive Web App with:
 - **Offline Capability**: Continue coding without internet connection
@@ -183,7 +183,7 @@ We welcome contributions! Here's how to get started:
 - Add proper error handling
 - Write descriptive commit messages
 
-## 📋 Available Scripts
+##  Available Scripts
 
 ```bash
 # Development
@@ -197,7 +197,7 @@ npx convex dev       # Start Convex development
 npx convex deploy    # Deploy Convex functions
 ```
 
-## 🌟 Project Structure
+##  Project Structure
 
 ```
 zitacode/
@@ -217,7 +217,7 @@ zitacode/
 └── package.json              # Dependencies and scripts
 ```
 
-## 🎨 Key Components
+##  Key Components
 
 - **EditorPanel**: Monaco editor with language selection and themes
 - **OutputPanel**: Code execution results and error display
@@ -226,7 +226,7 @@ zitacode/
 - **ThemeSelector**: Light/dark mode toggle
 - **Header**: Navigation and user authentication
 
-## 🔧 Configuration
+##  Configuration
 
 ### **Supported Languages**
 The application supports multiple programming languages with specific runtime configurations:
@@ -243,18 +243,18 @@ The application supports multiple programming languages with specific runtime co
 - **Swift** (Latest)
 - **C** (Latest)
 
-## 📞 Support & Contact
+##  Support & Contact
 
 - **Documentation**: Check the code comments and TypeScript definitions
 - **Issues**: Report bugs on [GitHub Issues](https://github.com/SjxSubham/ZitaCode/issues)
 - **Email**: Contact the developer for support
 - **Community**: Join discussions in the repository
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Piston API** for secure code execution
 - **Monaco Editor** for the amazing code editing experience
