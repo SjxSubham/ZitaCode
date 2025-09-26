@@ -40,9 +40,9 @@ function SignInPopup() {
     <SignedOut>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-gray-700">
-          <DialogHeader className="text-center space-y-3">
+          <DialogHeader className="text-center space-y-3 items-center justify-center">
 {/*             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center"> */}
-              <div className="size-8 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0 items-center justify-center transition-transform duration-500" >
+              <div className="size-11 text-blue-400 transform dark:-rotate-2 group-hover:rotate-0  transition-transform duration-500" >
                   <img
                 src="/Image...webp"
                 alt="ZitaCode"
@@ -61,7 +61,7 @@ function SignInPopup() {
           
           <div className="flex flex-col gap-3 mt-6">
             <SignInButton mode="modal">
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 rounded-lg transition-all duration-200">
+              <Button className="w-full bg-indigo-600 text-white   font-semibold py-3 rounded-lg transition-all duration-200">
                 Sign In to Get Started
               </Button>
             </SignInButton>
@@ -70,14 +70,14 @@ function SignInPopup() {
               <Button 
                 variant="outline" 
                 onClick={handleRemindLater}
-                className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
+                className="flex-1 border-gray-600 dark:text-gray-300 hover:bg-gray-800 hover:text-white"
               >
                 Maybe Later
               </Button>
               <Button 
                 variant="outline" 
                 onClick={handleClose}
-                className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
+                className="flex-1 border-gray-600 text-gray-500 hover:bg-gray-800 hover:text-white"
               >
                 Don&apos;t Show Again
               </Button>
@@ -88,6 +88,7 @@ function SignInPopup() {
             onClick={handleClose}
             className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-gray-400 hover:text-white"
           >
+            
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
           </button>
