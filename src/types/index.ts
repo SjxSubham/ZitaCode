@@ -47,9 +47,9 @@ export interface CodeEditorState {
   editor: Monaco | null;
   executionResult: ExecutionResult | null;
 
-  userInput: string; // Add userInput state
-  setUserInput: (input: string) => void; // Add setUserInput action
-  
+  userInput: string;
+  setUserInput: (input: string) => void;
+
   setEditor: (editor: Monaco) => void;
   getCode: () => string;
   setLanguage: (language: string) => void;
