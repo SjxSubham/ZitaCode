@@ -1,18 +1,18 @@
-// src/hooks/usePWAInstall.ts
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
   readonly userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
+    outcome: "accepted" | "dismissed";
     platform: string;
   }>;
   prompt(): Promise<void>;
 }
 
 export default function usePWAInstall() {
-  const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [installPrompt, setInstallPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
     const handler = (e: BeforeInstallPromptEvent) => {
@@ -20,10 +20,13 @@ export default function usePWAInstall() {
       setInstallPrompt(e);
     };
 
-    window.addEventListener('beforeinstallprompt', handler as EventListener);
+    window.addEventListener("beforeinstallprompt", handler as EventListener);
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handler as EventListener);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handler as EventListener,
+      );
     };
   }, []);
 
@@ -32,7 +35,7 @@ export default function usePWAInstall() {
     installPrompt.prompt();
     const { outcome } = await installPrompt.userChoice;
     setInstallPrompt(null);
-    return outcome === 'accepted';
+    return outcome === "accepted";
   };
 
   return { installPrompt, install };

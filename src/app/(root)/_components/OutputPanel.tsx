@@ -1,12 +1,19 @@
 "use client";
 
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
-import { AlertTriangle, CheckCircle, Clock, Copy, Terminal, Loader2 } from "lucide-react";
+import {
+  AlertTriangle,
+  CheckCircle,
+  Copy,
+  Terminal,
+  Loader2,
+} from "lucide-react";
 import { useState } from "react";
 import RunningCodeSkeleton from "./RunningCodeSkeleton";
 
 function OutputPanel() {
-  const { output, error, isRunning, userInput, setUserInput } = useCodeEditorStore();
+  const { output, error, isRunning, userInput, setUserInput } =
+    useCodeEditorStore();
   const [isCopied, setIsCopied] = useState(false);
 
   const hasContent = error || output;
@@ -20,7 +27,6 @@ function OutputPanel() {
 
   return (
     <div className="relative shadow-2xl bg-gray-400/50 dark:bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-4 sm:p-6 h-full">
-      {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#1e1e2e] ring-1 ring-gray-800/50">
@@ -32,7 +38,7 @@ function OutputPanel() {
         {hasContent && (
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] 
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e]
             rounded-lg ring-1 ring-gray-800/50 hover:ring-gray-700/50 transition-all"
           >
             {isCopied ? (
@@ -50,9 +56,7 @@ function OutputPanel() {
         )}
       </div>
 
-      {/* Terminal Area */}
       <div className="relative group rounded-xl overflow-hidden ring-1 ring-white/[0.05] bg-[#1e1e2e]/50 flex flex-col h-[600px]">
-        {/* Output Section */}
         <div className="flex-1 p-4 overflow-auto font-mono text-sm scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
           {isRunning ? (
             <div className="space-y-4">
@@ -67,7 +71,9 @@ function OutputPanel() {
               <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-1" />
               <div className="space-y-1">
                 <div className="font-medium">Execution Error</div>
-                <pre className="whitespace-pre-wrap text-red-400/80">{error}</pre>
+                <pre className="whitespace-pre-wrap text-red-400/80">
+                  {error}
+                </pre>
               </div>
             </div>
           ) : output ? (
@@ -90,10 +96,8 @@ function OutputPanel() {
           )}
         </div>
 
-        {/* Input Separator */}
         <div className="h-px bg-white/[0.05]" />
 
-        {/* Input Section */}
         <div className="p-4 bg-[#1e1e2e]">
           <div className="flex items-center gap-2 mb-2 text-xs text-gray-500 uppercase tracking-wider font-semibold">
             <Terminal className="w-3 h-3" />
