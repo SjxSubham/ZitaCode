@@ -1,5 +1,6 @@
 import { Monaco } from "@monaco-editor/react";
 import { Theme } from "../../../types";
+import { inherits } from "util";
 
 type LanguageConfig = Record<
   string,
@@ -103,7 +104,7 @@ print(f"Sum of numbers: {numbers_sum}")`,
     monacoLanguage: "java",
     defaultCode: `
     // Java PlayGround
-    public class Main {
+    class Main {
   public static void main(String[] args) {
       // Create array
       int[] numbers = {1, 2, 3, 4, 5};

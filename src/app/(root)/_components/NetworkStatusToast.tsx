@@ -1,10 +1,7 @@
-"use client";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
-import {
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-} from "@heroicons/react/24/solid";
+'use client';
+import { useEffect } from 'react';
+import toast from 'react-hot-toast';
+import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 
 export default function NetworkStatusToast() {
   useEffect(() => {
@@ -12,9 +9,9 @@ export default function NetworkStatusToast() {
       toast.success(
         <div className="flex items-center gap-2 bg-transparent">
           <CheckCircleIcon className="w-5 h-5 text-green-500" />
-          <span>You&apos;re back, Online</span>
+          <span>You're back, Online</span>
         </div>,
-        { icon: null },
+        { icon: null }
       );
     };
 
@@ -24,20 +21,21 @@ export default function NetworkStatusToast() {
           <ExclamationTriangleIcon className="w-5 h-5 text-red-500" />
           <span>Network Disconnected, Offline</span>
         </div>,
-        { icon: null },
+        { icon: null }
       );
     };
 
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
 
+    // Show status on initial load
     if (!navigator.onLine) handleOffline();
 
     return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
     };
   }, []);
 
-  return null;
+  return null; // this component doesn't render anything itself
 }

@@ -29,7 +29,9 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
 
   const handleLanguageSelect = (langId: string) => {
     if (!hasAccess && langId !== "javascript") return;
+
     setLanguage(langId);
+    setIsOpen(false);
   };
 
   if (!mounted) return null;
@@ -45,6 +47,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
        duration-200 border dark:border-gray-800/50 hover:border-gray-700
        ${!hasAccess && language !== "javascript" ? "opacity-50 cursor-not-allowed" : ""}`}
       >
+        {/* Decoration */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/8
         rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
@@ -81,7 +84,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
             className="absolute top-full left-0 mt-2 w-64 bg-gray-400 dark:bg-[#1e1e2e]/95 backdrop-blur-xl
          rounded-xl border border-[#313244] shadow-2xl py-2 z-50 "
           >
-            <div className="px-3 pb-2 mb-2 border-b border-gray-800/50">
+            <div className="px-3 pb-2 mb-2 border-b border-gray-800/50 ">
               <p className="text-xs font-medium text-gray-800 dark:text-gray-400">
                 Select Language
               </p>
@@ -101,22 +104,23 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                     <button
                       className={`
                       relative w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200
-                      ${language === lang.id ? "bg-blue-500/10 text-gray-800 dark:text-blue-400" : "text-gray-900 dark:text-gray-300"}
+                      ${language === lang.id ? "bg-blue-500/10 font- text-gray-800 dark:text-blue-400" : "text-gray-900 dark:text-gray-300"}
                       ${isLocked ? "opacity-50" : "hover:bg-[#262637]"}
                     `}
                       onClick={() => handleLanguageSelect(lang.id)}
                       disabled={isLocked}
                     >
+                      {/* decorator */}
                       <div
                         className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg
-                      opacity-0 group-hover:opacity-100 transition-opacity"
+                      opacity-0 group-hover:opacity-100 transition-opacity "
                       />
 
                       <div
                         className={`
-                        relative size-8 rounded-lg p-1.5 group-hover:scale-110 transition-transform
-                        ${language === lang.id ? "bg-blue-500/10" : "bg-gray-800/50"}
-                      `}
+                         relative size-8 rounded-lg p-1.5 group-hover:scale-110 transition-transform
+                         ${language === lang.id ? "bg-blue-500/10" : "bg-gray-800/50"}
+                       `}
                       >
                         <div
                           className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg
@@ -135,6 +139,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                         {lang.label}
                       </span>
 
+                      {/* selected language border */}
                       {language === lang.id && (
                         <motion.div
                           className="absolute inset-0 border-2 border-blue-500/30 rounded-lg"

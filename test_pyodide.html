@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+</head>
+<body>
+  <script>
+    async function main(){
+      let pyodide = await loadPyodide();
+      console.log(await pyodide.runPythonAsync("1+1"));
+    }
+    main();
+  </script>
+</body>
+</html>
