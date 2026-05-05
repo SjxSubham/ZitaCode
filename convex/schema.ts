@@ -23,7 +23,6 @@ export default defineSchema({
   snippets: defineTable({
     userId: v.string(),
     title: v.string(),
-    description: v.optional(v.string()),
     language: v.string(),
     code: v.string(),
     userName: v.string(), // store user's name for easy access
@@ -37,7 +36,7 @@ export default defineSchema({
   }).index("by_snippet_id", ["snippetId"]),
 
   stars: defineTable({
-    userId: v.string(),
+    userId: v.id("users"),
     snippetId: v.id("snippets"),
   })
     .index("by_user_id", ["userId"])
