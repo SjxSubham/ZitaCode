@@ -19,7 +19,7 @@
 //   const [isShareDialogOpen, setShareDialogOpen] = useState(false);
 //   const {language, theme, fontSize, editor, setFontSize, setEditor}  = useCodeEditorStore();
 //   const mounted = useMounted();
-  
+
 //   useEffect(() => {
 //       const savedCode = localStorage.getItem(`editor-code-${language}`);
 //       const newCode = savedCode || LANGUAGE_CONFIG[language].defaultCode;
@@ -29,7 +29,7 @@
 //   useEffect(() => {
 //     const savedFontSize = localStorage.getItem("editor-font-size");
 //     if(savedFontSize) setFontSize(parseInt(savedFontSize));
-//   }, [setFontSize]);  
+//   }, [setFontSize]);
 
 //   const handleRefresh = () => {
 //     const defaultCode = LANGUAGE_CONFIG[language].defaultCode;
@@ -49,7 +49,7 @@
 //     localStorage.setItem("editor-font-size", size.toString());
 //     }
 
-//   if(!mounted) return null; 
+//   if(!mounted) return null;
 //   return (
 
 //     <div className="relative">
@@ -61,7 +61,7 @@
 //               <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
 //             </div>
 //             <div>
-//               <h2 className="text-sm font-medium font-mono text-white">  Code Editor </h2> 
+//               <h2 className="text-sm font-medium font-mono text-white">  Code Editor </h2>
 //               <p className="text-xs text-gray-500">Write and execute your code</p>
 //             </div>
 //           </div>
@@ -148,10 +148,8 @@
 //       {isShareDialogOpen && <ShareSnippetDialog onClose={() => setShareDialogOpen(false)} />}
 //     </div>
 
-    
 //   )
 // }
-
 
 // export default EditorPanel
 
@@ -164,19 +162,26 @@ import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
 import { Editor } from "@monaco-editor/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { RotateCcwIcon, ShareIcon, TypeIcon, Sparkles, BrainCircuit, WandSparkles } from "lucide-react";
+import {
+  RotateCcwIcon,
+  ShareIcon,
+  TypeIcon,
+  Sparkles,
+  BrainCircuit,
+  WandSparkles,
+} from "lucide-react";
+import ShareSnippetDialog from "./ShareSnippetDialog";
 import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
 import useMounted from "@/hooks/useMounted";
 import { AICodeReviewDialog } from "./AICodeReviewDialog";
 
-
-
 function EditorPanel() {
   const clerk = useClerk();
   const [isShareDialogOpen, setShareDialogOpen] = useState(false);
   const [isReviewDialogOpen, setReviewDialogOpen] = useState(false);
-  const { language, theme, fontSize, editor, setFontSize, setEditor } = useCodeEditorStore();
+  const { language, theme, fontSize, editor, setFontSize, setEditor } =
+    useCodeEditorStore();
   const mounted = useMounted();
 
   useEffect(() => {
@@ -215,13 +220,20 @@ function EditorPanel() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg dark:bg-[#1e1e2e] bg-transparent ring-1 ring-white/5">
-              <Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
+              <Image
+                src={"/" + language + ".png"}
+                alt="Logo"
+                width={24}
+                height={24}
+              />
             </div>
             <div>
-              <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">Code</h2>
-              <p className="text-xs sm:w-fit text-gray-500">Write, debug, and execute your code seamlessly</p>
-
-
+              <h2 className="text-sm font-semibold dark:font-medium font-mono dark:text-white">
+                Code
+              </h2>
+              <p className="text-xs sm:w-fit text-gray-500">
+                Write, debug, and execute your code seamlessly
+              </p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
@@ -234,9 +246,11 @@ function EditorPanel() {
                   min="10"
                   max="24"
                   value={fontSize}
-                  onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleFontSizeChange(parseInt(e.target.value))
+                  }
                   className="w-12 sm:w-16 h-1 bg-gray-600 rounded-lg cursor-pointer"
-                /> 
+                />
                 <span className="text-sm sm:text-sm font-medium text-white dark:text-gray-400 min-w-[1.5rem] sm:min-w-[2rem] text-center">
                   {fontSize}
                 </span>
@@ -272,7 +286,6 @@ function EditorPanel() {
               onClick={() => setShareDialogOpen(true)}
               className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-lg overflow-hidden bg-gradient-to-r
                from-indigo-600 via-blue-500 to-indigo-400 opacity-90 hover:opacity-100 transition-opacity"
-             disabled={true} // Disable the button
             >
               <ShareIcon className="size-4 text-white" />
               <span className="text-sm font-medium text-white">Share</span>
@@ -317,7 +330,9 @@ function EditorPanel() {
           {!clerk.loaded && <EditorPanelSkeleton />}
         </div>
       </div>
-      {/* {isShareDialogOpen && <ShareSnippetDialog onClose={() => setShareDialogOpen(false)} />} */}
+      {isShareDialogOpen && (
+        <ShareSnippetDialog onClose={() => setShareDialogOpen(false)} />
+      )}
       {isReviewDialogOpen && (
         <AICodeReviewDialog
           isOpen={isReviewDialogOpen}
