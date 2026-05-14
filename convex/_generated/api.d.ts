@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as buckets from "../buckets.js";
 import type * as http from "../http.js";
 import type * as snippetComments from "../snippetComments.js";
 import type * as snippets from "../snippets.js";
@@ -21,6 +22,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  buckets: typeof buckets;
   http: typeof http;
   snippetComments: typeof snippetComments;
   snippets: typeof snippets;
