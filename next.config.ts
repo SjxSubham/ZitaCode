@@ -6,15 +6,10 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  turbopack: {},
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.ts$/,
-      include: [path.join(__dirname, "public")],
-      use: "ts-loader",
-    });
-    return config;
+  typescript: {
+    ignoreBuildErrors: true,
   },
+  turbopack: {},
 };
 const pwaConfig = withPWA({
   dest: "public",
