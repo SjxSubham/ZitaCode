@@ -43,4 +43,18 @@ export default defineSchema({
     .index("by_user_id", ["userId"])
     .index("by_snippet_id", ["snippetId"])
     .index("by_user_id_and_snippet_id", ["userId", "snippetId"]),
+
+  buckets: defineTable({
+    userId: v.string(), // The owner of the bucket
+    name: v.string(),
+    description: v.optional(v.string()),
+  }).index("by_user_id", ["userId"]),
+
+  bucketSnippets: defineTable({
+    bucketId: v.id("buckets"),
+    snippetId: v.id("snippets"),
+  })
+    .index("by_bucket_id", ["bucketId"])
+    .index("by_snippet_id", ["snippetId"])
+    .index("by_bucket_and_snippet", ["bucketId", "snippetId"]),
 });
