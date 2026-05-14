@@ -7,7 +7,15 @@ import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import { Id } from "../../../../convex/_generated/dataModel";
 import { useUser } from "@clerk/nextjs";
-import { ArrowLeft, Code2, MessageSquare, Star, Share2, User } from "lucide-react";
+import {
+  ArrowLeft,
+  Code2,
+  MessageSquare,
+  Star,
+  Share2,
+  User,
+} from "lucide-react";
+import AddToBucketDialog from "@/app/(root)/_components/AddToBucketDialog";
 
 export default function SnippetPage() {
   const params = useParams();
@@ -68,8 +76,13 @@ export default function SnippetPage() {
       <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-[#0a0a0f] text-white">
         <Code2 size={48} className="text-gray-500 mb-4" />
         <h1 className="text-2xl font-bold mb-2">Snippet Not Found</h1>
-        <p className="text-gray-400 mb-6">The snippet you are looking for does not exist or has been removed.</p>
-        <Link href="/snippets" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+        <p className="text-gray-400 mb-6">
+          The snippet you are looking for does not exist or has been removed.
+        </p>
+        <Link
+          href="/snippets"
+          className="text-blue-400 hover:text-blue-300 flex items-center gap-2"
+        >
           <ArrowLeft size={16} /> Back to Community
         </Link>
       </div>
@@ -81,7 +94,10 @@ export default function SnippetPage() {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <Link href="/snippets" className="text-gray-400 hover:text-white flex items-center gap-2 transition">
+          <Link
+            href="/snippets"
+            className="text-gray-400 hover:text-white flex items-center gap-2 transition"
+          >
             <ArrowLeft size={20} />
             <span>Back to Snippets</span>
           </Link>
@@ -100,7 +116,9 @@ export default function SnippetPage() {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <Code2 className="text-blue-400" size={28} />
-                <h1 className="text-2xl md:text-3xl font-bold text-white">{snippet.title}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-white">
+                  {snippet.title}
+                </h1>
               </div>
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
                 <span className="flex items-center gap-1">
@@ -123,8 +141,11 @@ export default function SnippetPage() {
               }`}
             >
               <Star size={20} className={hasStarred ? "fill-yellow-500" : ""} />
-              <span className="font-semibold">{starsCount !== undefined ? starsCount : "..."}</span>
+              <span className="font-semibold">
+                {starsCount !== undefined ? starsCount : "..."}
+              </span>
             </button>
+            {isSignedIn && <AddToBucketDialog snippetId={snippetId} />}
           </div>
 
           {snippet.description && (
@@ -189,22 +210,31 @@ export default function SnippetPage() {
                 </div>
               </div>
             ) : comments.length === 0 ? (
-              <p className="text-gray-500 text-center py-4">No comments yet. Be the first to share your thoughts!</p>
+              <p className="text-gray-500 text-center py-4">
+                No comments yet. Be the first to share your thoughts!
+              </p>
             ) : (
               comments.map((comment) => (
-                <div key={comment._id} className="p-4 bg-white/5 border border-white/5 rounded-xl">
+                <div
+                  key={comment._id}
+                  className="p-4 bg-white/5 border border-white/5 rounded-xl"
+                >
                   <div className="flex items-center gap-2 mb-2">
                     <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
                       {comment.userName.charAt(0).toUpperCase()}
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-200">{comment.userName}</span>
+                      <span className="font-semibold text-gray-200">
+                        {comment.userName}
+                      </span>
                       <span className="text-xs text-gray-500 ml-2">
                         {new Date(comment._creationTime).toLocaleDateString()}
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-300 ml-10 whitespace-pre-wrap">{comment.content}</p>
+                  <p className="text-gray-300 ml-10 whitespace-pre-wrap">
+                    {comment.content}
+                  </p>
                 </div>
               ))
             )}
