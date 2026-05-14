@@ -126,7 +126,6 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
         executionCache[cacheKey] = successState;
         set(successState);
       } catch (error) {
-        console.log("error running code:", error);
         set({
           error: "Error running code",
           executionResult: {

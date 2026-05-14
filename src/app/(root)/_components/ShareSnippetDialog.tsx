@@ -10,7 +10,9 @@ interface ShareSnippetDialogProps {
   onClose: () => void;
 }
 
-export default function ShareSnippetDialog({ onClose }: ShareSnippetDialogProps) {
+export default function ShareSnippetDialog({
+  onClose,
+}: ShareSnippetDialogProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isSharing, setIsSharing] = useState(false);
@@ -37,7 +39,7 @@ export default function ShareSnippetDialog({ onClose }: ShareSnippetDialogProps)
       const url = `${window.location.origin}/snippets/${snippetId}`;
       setShareUrl(url);
     } catch (error) {
-      console.error("Error sharing snippet:", error);
+      toast.error("Error creating snippet");
     } finally {
       setIsSharing(false);
     }
@@ -70,7 +72,10 @@ export default function ShareSnippetDialog({ onClose }: ShareSnippetDialogProps)
         {!shareUrl ? (
           <form onSubmit={handleShare} className="space-y-4">
             <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 Title <span className="text-red-400">*</span>
               </label>
               <input
@@ -85,7 +90,10 @@ export default function ShareSnippetDialog({ onClose }: ShareSnippetDialogProps)
             </div>
 
             <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 Description (Optional)
               </label>
               <textarea
@@ -129,7 +137,9 @@ export default function ShareSnippetDialog({ onClose }: ShareSnippetDialogProps)
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Shareable Link</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Shareable Link
+              </label>
               <div className="flex gap-2">
                 <input
                   type="text"

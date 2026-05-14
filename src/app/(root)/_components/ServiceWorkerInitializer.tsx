@@ -21,8 +21,6 @@ export default function ServiceWorkerInitializer() {
       navigator.serviceWorker
         .register("/sw.js")
         .then((reg) => {
-          console.log("SW registered:", reg);
-
           // Listen for new service worker installation
           reg.addEventListener("updatefound", () => {
             const newWorker = reg.installing;
@@ -67,7 +65,7 @@ export default function ServiceWorkerInitializer() {
             });
           });
         })
-        .catch((err) => console.log("SW registration failed:", err));
+        .catch(() => {});
     }
   }, []);
 

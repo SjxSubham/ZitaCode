@@ -47,7 +47,7 @@ export function AICodeReviewDialog({
       const data = await response.json();
       setSuggestions(data.suggestions);
     } catch (error) {
-      console.error("Error getting AI review:", error);
+      // Error handled silently as UI reflects failure gracefully
     } finally {
       setIsLoading(false);
     }

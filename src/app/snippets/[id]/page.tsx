@@ -57,7 +57,7 @@ export default function SnippetPage() {
       });
       setCommentText("");
     } catch (error) {
-      console.error("Failed to add comment:", error);
+      toast.error("Failed to add comment");
     } finally {
       setIsSubmitting(false);
     }
