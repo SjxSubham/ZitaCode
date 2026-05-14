@@ -24,7 +24,9 @@ export default function BucketsPage() {
       <div className="min-h-screen bg-[#0a0a0f] flex flex-col items-center justify-center text-white">
         <FolderGit2 size={48} className="text-gray-500 mb-4" />
         <h1 className="text-2xl font-bold mb-2">My Buckets</h1>
-        <p className="text-gray-400">Please sign in to view and manage your buckets.</p>
+        <p className="text-gray-400">
+          Please sign in to view and manage your buckets.
+        </p>
       </div>
     );
   }
@@ -88,7 +90,11 @@ export default function BucketsPage() {
               disabled={!newBucketName.trim() || isCreating}
               className="bg-blue-600 hover:bg-blue-700 text-white"
             >
-              {isCreating ? <Loader2 size={16} className="animate-spin" /> : <Plus size={16} />}
+              {isCreating ? (
+                <Loader2 size={16} className="animate-spin" />
+              ) : (
+                <Plus size={16} />
+              )}
               <span className="hidden md:inline ml-2">Create</span>
             </Button>
           </form>
@@ -101,6 +107,7 @@ export default function BucketsPage() {
           <p className="text-gray-400 mb-8">
             Manage your saved snippets and collections.
           </p>
+        </div>
 
         {buckets === undefined ? (
           <div className="flex justify-center py-12">
@@ -109,8 +116,12 @@ export default function BucketsPage() {
         ) : buckets.length === 0 ? (
           <div className="text-center py-24 bg-[#1a1a2e] border border-white/10 rounded-2xl">
             <FolderGit2 size={48} className="mx-auto text-gray-500 mb-4" />
-            <p className="text-xl font-medium text-gray-300">You don't have any buckets yet.</p>
-            <p className="text-gray-500 mt-2">Create one above to start saving snippets!</p>
+            <p className="text-xl font-medium text-gray-300">
+              You don't have any buckets yet.
+            </p>
+            <p className="text-gray-500 mt-2">
+              Create one above to start saving snippets!
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,7 +140,10 @@ export default function BucketsPage() {
                       Click to view saved snippets
                     </p>
                   </div>
-                  <FolderGit2 className="text-blue-500/50 group-hover:text-blue-400" size={24} />
+                  <FolderGit2
+                    className="text-blue-500/50 group-hover:text-blue-400"
+                    size={24}
+                  />
                 </div>
               </Link>
             ))}
