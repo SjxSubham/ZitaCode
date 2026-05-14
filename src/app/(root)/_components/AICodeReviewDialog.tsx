@@ -1,5 +1,10 @@
 "use client";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { BrainCircuit, Copy, Loader2, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -14,7 +19,12 @@ interface AICodeReviewDialogProps {
   language: string;
 }
 
-export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeReviewDialogProps) {
+export function AICodeReviewDialog({
+  isOpen,
+  onClose,
+  code,
+  language,
+}: AICodeReviewDialogProps) {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -29,7 +39,7 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
         },
         body: JSON.stringify({ code, language }),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to get AI review");
       }
@@ -43,8 +53,6 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
     }
   };
 
- 
-  
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="min-w-fit max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg custom-scrollbar">
@@ -57,9 +65,9 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
         <div className="space-y-6 p-6">
           {suggestions.length === 0 && !isLoading && (
             <div className="text-center py-8">
-                <p className="text-gray-500 dark:text-gray-400 mb-4">
-                  Get AI-powered suggestions for your code
-                </p>
+              <p className="text-gray-500 dark:text-gray-400 mb-4">
+                Get AI-powered suggestions for your code
+              </p>
               <Button
                 onClick={handleReview}
                 className="gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow-md transition-all"
@@ -67,10 +75,7 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
                 <BrainCircuit className="text-gray-800 h-4 w-4" />
                 Review Code
               </Button>
-
             </div>
-
-            
           )}
           {isLoading && (
             <div className="flex items-center justify-center py-8">
@@ -82,12 +87,19 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
               <h3 className="font-medium text-lg text-gray-800 dark:text-gray-200">
                 Suggestions:
               </h3>
-              <div
-                className="text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-4"
-              >
+              <div className="text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow space-y-4">
                 <ReactMarkdown
                   components={{
-                    code({ inline, className, children, ...props }: { inline?: boolean; className?: string; children?: React.ReactNode }) {
+                    code({
+                      inline,
+                      className,
+                      children,
+                      ...props
+                    }: {
+                      inline?: boolean;
+                      className?: string;
+                      children?: React.ReactNode;
+                    }) {
                       const match = /language-(\w+)/.exec(className || "");
                       return !inline && match ? (
                         <div className="relative bg-gray-200 dark:bg-gray-800 p-3 rounded-lg shadow-inner">
@@ -95,7 +107,9 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
 
                           <button
                             onClick={() => {
-                              navigator.clipboard.writeText(String(children).replace(/\n$/, ""));
+                              navigator.clipboard.writeText(
+                                String(children).replace(/\n$/, ""),
+                              );
                               setIsCopied(true); // Show tooltip
                               setTimeout(() => setIsCopied(false), 2000); // Hide tooltip after 2 seconds
                             }}
@@ -115,13 +129,13 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
                             language={match[1]}
                             PreTag="div"
                             customStyle={{
-                              backgroundColor: 'transparent',
-                              padding: '0',
-                              fontSize: '0.875rem',
+                              backgroundColor: "transparent",
+                              padding: "0",
+                              fontSize: "0.875rem",
                             }}
                             {...props}
                           >
-                            {String(children).replace(/\n$/, '')}
+                            {String(children).replace(/\n$/, "")}
                           </SyntaxHighlighter>
                         </div>
                       ) : (
@@ -137,23 +151,24 @@ export function AICodeReviewDialog({ isOpen, onClose, code, language }: AICodeRe
                       return <div className="mb-4">{children}</div>;
                     },
                     li({ children }) {
-                      return <div className="mb-2 pl-4 list-disc">{children}</div>;
+                      return (
+                        <div className="mb-2 pl-4 list-disc">{children}</div>
+                      );
                     },
                   }}
                 >
                   {suggestions.join("\n\n")}
                 </ReactMarkdown>
               </div>
-                <Button
-                  onClick={handleReview}
-                  variant="outline"
-                  className="w-full gap-2 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg transition-all"
-                >
-                  <Sparkles className="h-4 w-4" />
-                  Review Again
-                </Button>
-              </div>
-            
+              <Button
+                onClick={handleReview}
+                variant="outline"
+                className="w-full gap-2 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg transition-all"
+              >
+                <Sparkles className="h-4 w-4" />
+                Review Again
+              </Button>
+            </div>
           )}
         </div>
       </DialogContent>

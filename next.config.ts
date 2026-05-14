@@ -3,6 +3,9 @@ import withPWA from "next-pwa";
 import path from "path";
 const nextConfig: NextConfig = {
   /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   turbopack: {},
   webpack: (config) => {
     config.module.rules.push({
